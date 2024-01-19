@@ -1,0 +1,48 @@
+
+function cutting(blok: block, n: integer):
+     wait 1 tick
+       if {_n} < 50:
+
+           loop all blocks in radius 3 of {_blok}:
+              loop-block is any log
+
+
+              loop blocks above loop-block:
+                 loop-block-2 is air:
+                       block above loop-block-2 is air
+                       exit 1 loop
+                    exit 1 loop
+
+
+              loop blocks above loop-block:
+              loop-block-2 is any leaves
+              cutting(loop-block-1, {_n})
+              break loop-block-1
+              wait 10 ticks
+          
+
+                    
+    
+  
+  
+  
+  
+  
+  
+  on breaking any log:
+      player is sneaking
+
+       loop blocks above event-block:
+             set {_l} to 0
+
+
+            if loop-block is any leaves:
+                  loop all blocks in radius 2 if loop-block:
+                        loop-block-2 is any leaves
+                         add 1 to {_l} 
+
+                         {_1}  >7
+                         set {_tree} to true
+
+          if {_tree} is true:
+            cutting(event-block, 0)
